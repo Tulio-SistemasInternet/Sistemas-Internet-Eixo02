@@ -2,12 +2,20 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import Contato from './Contato';
+import paginaPadrao from './paginaPadrao'
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <BrowserRouter>
+  <Switch>
+    <Route exact path="/" component={App} />
+    <Route exact path="/Contato" component={Contato} />
+    <Route exact path="*" component={paginaPadrao} />
+  </Switch>
+  </BrowserRouter>,
   document.getElementById('root')
 );
 
